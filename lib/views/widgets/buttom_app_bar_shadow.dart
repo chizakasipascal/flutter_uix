@@ -4,10 +4,12 @@ import 'package:uix/utils/colors.dart';
 class ButtomAppBarShawdow extends StatelessWidget {
   final Widget widget;
   final Color color;
+  final Color backgroung;
   const ButtomAppBarShawdow({
     Key key,
     this.widget,
     this.color,
+    this.backgroung,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class ButtomAppBarShawdow extends StatelessWidget {
             height: 60.0,
             width: 60.0,
             decoration: BoxDecoration(
-              color: WhiteColor,
+              color: backgroung,
               boxShadow: [
                 BoxShadow(
                   color: BlueColor.withOpacity(.7),

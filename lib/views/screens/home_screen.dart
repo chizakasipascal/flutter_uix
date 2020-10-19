@@ -17,6 +17,7 @@ class _HomeScreeState extends State<HomeScree> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
@@ -27,6 +28,7 @@ class _HomeScreeState extends State<HomeScree> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ButtomAppBarShawdow(
+                  backgroung: WhiteColor,
                   widget: Icon(
                     Icons.local_mall,
                     color: BlueColor,
@@ -65,13 +67,47 @@ class _HomeScreeState extends State<HomeScree> {
               ),
             ),
             Text(
-              "Find\nCREATE JOBS",
+              "Find your\nCREATE JOBS",
               style: TextStyle(
                 color: BlackColor,
                 fontWeight: FontWeight.w900,
                 fontSize: 30.0,
               ),
             ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 60.0,
+                  width: size.width - 110,
+                  decoration: BoxDecoration(
+                    color: WhiteColor,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: TextField(
+                      maxLength: 10,
+                      decoration: InputDecoration(
+                        counterText: '',
+                        border: InputBorder.none,
+                        labelText: "Seach for Jobsd",
+                        labelStyle: TextStyle(
+                            color: BlackColor, fontWeight: FontWeight.w500),
+                      ),
+                    ),
+                  ),
+                ),
+                ButtomAppBarShawdow(
+                  backgroung: BlackColor,
+                  widget: Icon(
+                    Icons.graphic_eq_outlined,
+                    color: WhiteColor,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
