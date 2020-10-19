@@ -6,9 +6,11 @@ class Jobs {
   final String entreprise;
   final String ville;
   final String dureOffret;
+  final String user;
 
   Jobs(
-      {this.description,
+      {this.user,
+      this.description,
       this.montant,
       this.hour,
       this.logo,
