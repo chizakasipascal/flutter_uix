@@ -50,6 +50,7 @@ class _HomeScreeState extends State<HomeScree> {
                   ],
                 ),
                 ButtomAppBarShawdow(
+                  color: BlueColor,
                   widget: Image.network(user),
                 ),
               ],

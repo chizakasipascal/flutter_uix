@@ -3,30 +3,46 @@ import 'package:uix/utils/colors.dart';
 
 class ButtomAppBarShawdow extends StatelessWidget {
   final Widget widget;
+  final Color color;
   const ButtomAppBarShawdow({
     Key key,
     this.widget,
+    this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
-      child: Container(
-        height: 60.0,
-        width: 60.0,
-        decoration: BoxDecoration(
-          color: WhiteColor,
-          boxShadow: [
-            BoxShadow(
-              color: BlueColor.withOpacity(.7),
-              blurRadius: .3,
-              offset: Offset(1, 1),
-            )
-          ],
+    return Stack(
+      overflow: Overflow.visible,
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Container(
+            height: 60.0,
+            width: 60.0,
+            decoration: BoxDecoration(
+              color: WhiteColor,
+              boxShadow: [
+                BoxShadow(
+                  color: BlueColor.withOpacity(.7),
+                  blurRadius: .3,
+                  offset: Offset(1, 1),
+                )
+              ],
+            ),
+            child: widget,
+          ),
         ),
-        child: widget,
-      ),
+        Positioned(
+          right: 0,
+          top: -2,
+          child: Container(
+            height: 10.0,
+            width: 10.0,
+            decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+          ),
+        ),
+      ],
     );
   }
 }
