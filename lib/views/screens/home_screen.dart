@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:uix/constants/strings.dart';
 import 'package:uix/models/jobs.dart';
+import 'package:uix/models/jobs_list.dart';
 import 'package:uix/utils/colors.dart';
 import 'package:uix/views/widgets/buttom_app_bar_shadow.dart';
+import 'package:uix/views/widgets/cart_job.dart';
 
 class HomeScree extends StatefulWidget {
-  final Jobs job;
-
-  const HomeScree({Key key, this.job}) : super(key: key);
   @override
   _HomeScreeState createState() => _HomeScreeState();
 }
 
 class _HomeScreeState extends State<HomeScree> {
-  final String user =
-      "https://media-exp1.licdn.com/dms/image/C4D03AQHNEd3zvvw3_A/profile-displayphoto-shrink_200_200/0?e=1608768000&v=beta&t=Mt_YXhoNeUbTLK_OF2Fyuxd8J46DWqA4MSBPNjjFFsc";
-
+  final List<Jobs> jobs = JobsList.getJobs();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -54,7 +52,7 @@ class _HomeScreeState extends State<HomeScree> {
                 ),
                 ButtomAppBarShawdow(
                   color: BlueColor,
-                  widget: Image.network(user),
+                  widget: Image.network(Strings.user),
                 ),
               ],
             ),
@@ -107,6 +105,40 @@ class _HomeScreeState extends State<HomeScree> {
                   ),
                 )
               ],
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Popular Jobs",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: BlackColor,
+                      fontSize: 18.0),
+                ),
+                Text(
+                  "show all",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w900,
+                    color: BlackColor.withOpacity(.5),
+                  ),
+                )
+              ],
+            ),
+            SizedBox(height: 20),
+            Container(
+              child: jobs.length > 0
+                  ? ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: jobs.length,
+                      itemBuilder: (BuildContext context, i) {
+                        return CardJobs(
+                          jobs: jobs[i],
+                        );
+                      })
+                  : Container(),
             )
           ],
         ),
