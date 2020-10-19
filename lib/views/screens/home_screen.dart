@@ -52,7 +52,7 @@ class _HomeScreeState extends State<HomeScree> {
                 ),
                 ButtomAppBarShawdow(
                   color: BlueColor,
-                  widget: Image.network(Strings.user),
+                  // widget: Image.network(Strings.user),
                 ),
               ],
             ),
@@ -127,19 +127,19 @@ class _HomeScreeState extends State<HomeScree> {
               ],
             ),
             SizedBox(height: 20),
-            Container(
-              child: jobs.length > 0
-                  ? ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      itemCount: jobs.length,
-                      itemBuilder: (BuildContext context, i) {
-                        return CardJobs(
-                          jobs: jobs[i],
-                        );
-                      })
-                  : Container(),
-            )
+            Flexible(
+              child: Container(
+                  child: jobs.length > 0
+                      ? ListView.builder(
+                          physics: BouncingScrollPhysics(),
+                          itemCount: jobs.length,
+                          itemBuilder: (BuildContext context, i) {
+                            return CardJobs(
+                              jobs: jobs[i],
+                            );
+                          })
+                      : Container()),
+            ),
           ],
         ),
       ),
