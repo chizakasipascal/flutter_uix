@@ -129,16 +129,24 @@ class _HomeScreeState extends State<HomeScree> {
             SizedBox(height: 20),
             Flexible(
               child: Container(
-                  child: jobs.length > 0
-                      ? ListView.builder(
-                          physics: BouncingScrollPhysics(),
-                          itemCount: jobs.length,
-                          itemBuilder: (BuildContext context, i) {
-                            return CardJobs(
-                              jobs: jobs[i],
-                            );
-                          })
-                      : Container()),
+                height: 250,
+                constraints: BoxConstraints(
+                  minHeight: 250,
+                  minWidth: 350,
+                ),
+                child: jobs.length > 0
+                    ? ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        itemCount: jobs.length,
+                        itemBuilder: (BuildContext context, i) {
+                          return CardJobs(
+                            jobs: jobs[i],
+                          );
+                        },
+                      )
+                    : SizedBox.shrink(),
+              ),
             ),
           ],
         ),

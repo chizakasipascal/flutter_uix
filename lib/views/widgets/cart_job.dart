@@ -17,7 +17,6 @@ class CardJobs extends StatelessWidget {
       child: Card(
         elevation: 2,
         child: Container(
-          height: 200.0,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -52,6 +51,7 @@ class CardJobs extends StatelessWidget {
                     ),
                   ],
                 ),
+                Spacer(),
                 Row(
                   children: [
                     ButtomAppBarShawdow(
