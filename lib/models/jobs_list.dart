@@ -1,7 +1,7 @@
 import 'package:uix/models/jobs.dart';
 
 class JobsList {
-  static List<Jobs> getMessages() {
+  static List<Jobs> getJobs() {
     return [
       Jobs(
           description: "Full Stack developper",
