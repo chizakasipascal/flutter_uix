@@ -18,11 +18,12 @@ class _HomeScreeState extends State<HomeScree> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
-            child: Row(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ButtomAppBarShawdow(
@@ -55,8 +56,24 @@ class _HomeScreeState extends State<HomeScree> {
                 ),
               ],
             ),
-          )
-        ],
+            SizedBox(height: 20),
+            Text(
+              "Goodmoning Pascal",
+              style: TextStyle(
+                color: BlackColor.withOpacity(.5),
+                fontSize: 18.0,
+              ),
+            ),
+            Text(
+              "Find\nCREATE JOBS",
+              style: TextStyle(
+                color: BlackColor,
+                fontWeight: FontWeight.w900,
+                fontSize: 30.0,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
