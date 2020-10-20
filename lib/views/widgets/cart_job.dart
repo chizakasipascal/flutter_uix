@@ -17,7 +17,6 @@ class CardJobs extends StatelessWidget {
       child: Card(
         elevation: 2,
         child: Container(
-          height: 200.0,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -31,6 +30,11 @@ class CardJobs extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                           color: BlackColor,
                           fontSize: 18.0),
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.book,
+                      color: BlueColor,
                     )
                   ],
                 ),
@@ -52,6 +56,7 @@ class CardJobs extends StatelessWidget {
                     ),
                   ],
                 ),
+                Spacer(),
                 Row(
                   children: [
                     ButtomAppBarShawdow(

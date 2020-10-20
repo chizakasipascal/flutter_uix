@@ -10,15 +10,15 @@ class JobsList {
           logo: "",
           entreprise: "Connectis",
           ville: "Goma",
-          dureOffret: "4days"),
+          dureOffret: "4 days"),
       Jobs(
-          description: "Full Stack developper",
-          montant: "30- 90",
+          description: "Design XD maquette",
+          montant: "15-30",
           hour: "Fulltime",
           logo: "",
-          entreprise: "Connectis",
-          ville: "Goma",
-          dureOffret: "4days"),
+          entreprise: "Papyris",
+          ville: "Bukavu",
+          dureOffret: "30 days"),
     ];
   }
 }
