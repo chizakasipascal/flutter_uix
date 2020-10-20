@@ -130,10 +130,6 @@ class _HomeScreeState extends State<HomeScree> {
             Flexible(
               child: Container(
                 height: 250,
-                constraints: BoxConstraints(
-                  minHeight: 250,
-                  minWidth: 350,
-                ),
                 child: jobs.length > 0
                     ? ListView.builder(
                         scrollDirection: Axis.horizontal,

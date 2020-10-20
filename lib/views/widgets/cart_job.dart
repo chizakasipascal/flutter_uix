@@ -30,6 +30,11 @@ class CardJobs extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                           color: BlackColor,
                           fontSize: 18.0),
+                    ),
+                    Spacer(),
+                    Icon(
+                      Icons.book,
+                      color: BlueColor,
                     )
                   ],
                 ),
