@@ -104,7 +104,7 @@ class _HomeScreeState extends State<HomeScree> {
                       ),
                     ),
                     ButtomAppBarShawdow(
-                      backgroung: BlackColor,
+                      backgroung: BlueColor,
                       widget: Icon(
                         Icons.graphic_eq_outlined,
                         color: WhiteColor,
@@ -145,6 +145,7 @@ class _HomeScreeState extends State<HomeScree> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,7 +153,8 @@ class _HomeScreeState extends State<HomeScree> {
                                 Text(
                                   "Senior UIX Designer",
                                   style: TextStyle(
-                                    fontSize: 16.0,
+                                    fontSize: 20.0,
+                                    color: WhiteColor,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
@@ -163,26 +165,29 @@ class _HomeScreeState extends State<HomeScree> {
                               ],
                             ),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Text(
                                   "40-120 hour",
                                   style: TextStyle(
+                                    color: WhiteColor,
                                     fontWeight: FontWeight.w800,
                                   ),
                                 ),
+                                SizedBox(width: 5),
                                 Container(
-                                  height: 50,
-                                  width: 100,
+                                  height: 30,
+                                  width: 50,
                                   decoration: BoxDecoration(
                                     color: WhiteColor.withOpacity(.4),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: Text(
-                                    "Full",
-                                    style: TextStyle(
-                                      color: BlackColor,
-                                      fontWeight: FontWeight.w800,
+                                  child: Center(
+                                    child: Text(
+                                      "Full",
+                                      style: TextStyle(
+                                        color: WhiteColor,
+                                        fontWeight: FontWeight.w800,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -190,21 +195,23 @@ class _HomeScreeState extends State<HomeScree> {
                             ),
                             Spacer(),
                             Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Container(
                                   height: 50,
-                                  width: 100,
+                                  width: 70,
                                   decoration: BoxDecoration(
                                     color: WhiteColor.withOpacity(.4),
-                                    borderRadius: BorderRadius.circular(20),
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Icon(
                                     Icons.description,
                                     color: WhiteColor,
                                   ),
                                 ),
+                                SizedBox(width: 5),
                                 Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
                                       "Channel",
@@ -220,6 +227,7 @@ class _HomeScreeState extends State<HomeScree> {
                                     ),
                                   ],
                                 ),
+                                Spacer(),
                                 Text(
                                   "4 days",
                                   style: TextStyle(
