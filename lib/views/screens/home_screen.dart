@@ -3,10 +3,12 @@ import 'package:uix/constants/strings.dart';
 import 'package:uix/models/jobs.dart';
 import 'package:uix/models/jobs_list.dart';
 import 'package:uix/utils/colors.dart';
+import 'package:uix/views/widgets/appBarWidget.dart';
 import 'package:uix/views/widgets/buttom_app_bar_shadow.dart';
 import 'package:uix/views/widgets/card_offres.dart';
 import 'package:uix/views/widgets/background.dart';
 import 'package:uix/views/widgets/jobs_widgets.dart';
+import 'package:uix/views/widgets/searchWidets.dart';
 
 class HomeScree extends StatefulWidget {
   @override
@@ -32,47 +34,7 @@ class _HomeScreeState extends State<HomeScree> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            ButtomAppBarShawdow(
-                              backgroung: WhiteColor,
-                              widget: Icon(
-                                Icons.local_mall,
-                                color: BlueColor,
-                              ),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  "Job",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w900,
-                                      color: BlueColor,
-                                      fontSize: 18.0),
-                                ),
-                                Text(
-                                  "creative",
-                                  style: TextStyle(
-                                    color: BlackColor,
-                                    fontSize: 14.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 40,
-                              width: 40,
-                              child: ButtomAppBarShawdow(
-                                color: BlueColor,
-                                widget: Image.network(
-                                  Strings.user,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                        AppbarWidget(),
                         SizedBox(height: 20),
                         Text(
                           "Goodmoning Pascal",
@@ -90,40 +52,7 @@ class _HomeScreeState extends State<HomeScree> {
                           ),
                         ),
                         SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              height: 60.0,
-                              width: size.width - 110,
-                              decoration: BoxDecoration(
-                                color: WhiteColor,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
-                                child: TextField(
-                                  maxLength: 10,
-                                  decoration: InputDecoration(
-                                    counterText: '',
-                                    border: InputBorder.none,
-                                    labelText: "Seach for Jobsd",
-                                    labelStyle: TextStyle(
-                                        color: BlackColor,
-                                        fontWeight: FontWeight.w500),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            ButtomAppBarShawdow(
-                              backgroung: BlueColor,
-                              widget: Icon(
-                                Icons.graphic_eq_outlined,
-                                color: WhiteColor,
-                              ),
-                            )
-                          ],
-                        ),
+                        SearchWidget(size: size),
                         SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
