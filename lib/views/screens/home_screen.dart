@@ -60,11 +60,15 @@ class _HomeScreeState extends State<HomeScree> {
                                 ),
                               ],
                             ),
-                            ButtomAppBarShawdow(
-                              color: BlueColor,
-                              widget: Image.network(
-                                Strings.user,
-                                fit: BoxFit.cover,
+                            SizedBox(
+                              height: 40,
+                              width: 40,
+                              child: ButtomAppBarShawdow(
+                                color: BlueColor,
+                                widget: Image.network(
+                                  Strings.user,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ],
@@ -192,6 +196,8 @@ class _HomeScreeState extends State<HomeScree> {
                       ],
                     ),
                   ),
+                  JobsListWidgts(),
+                  JobsListWidgts(),
                   JobsListWidgts(),
                 ],
               ),

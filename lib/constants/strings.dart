@@ -3,5 +3,5 @@ class Strings {
 
   static const String appName = "Gilroy";
   static const String user =
-      "https://i.pinimg.com/474x/58/63/60/586360a4ef713e0af6f1c76c2ce11cd4.jpg";
+      "https://www.denofgeek.com/wp-content/uploads/2016/11/avatar-sequel.jpg?resize=768%2C432";
 }
