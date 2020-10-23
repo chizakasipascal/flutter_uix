@@ -1,3 +1,4 @@
+import 'package:uix/constants/strings.dart';
 import 'package:uix/models/jobs.dart';
 
 class JobsList {
@@ -7,18 +8,10 @@ class JobsList {
           description: "Full Stack developper",
           montant: "30- 90",
           hour: "Fulltime",
-          logo: "",
+          logo: Strings.user,
           entreprise: "Connectis",
           ville: "Goma",
-          dureOffret: "4days"),
-      Jobs(
-          description: "Full Stack developper",
-          montant: "30- 90",
-          hour: "Fulltime",
-          logo: "",
-          entreprise: "Connectis",
-          ville: "Goma",
-          dureOffret: "4days"),
+          dureOffret: "4 days"),
     ];
   }
 }
