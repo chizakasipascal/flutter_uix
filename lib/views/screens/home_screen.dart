@@ -6,6 +6,7 @@ import 'package:uix/utils/colors.dart';
 import 'package:uix/views/widgets/buttom_app_bar_shadow.dart';
 import 'package:uix/views/widgets/card_offres.dart';
 import 'package:uix/views/widgets/background.dart';
+import 'package:uix/views/widgets/jobs_widgets.dart';
 
 class HomeScree extends StatefulWidget {
   @override
@@ -191,32 +192,7 @@ class _HomeScreeState extends State<HomeScree> {
                       ],
                     ),
                   ),
-                  ListTile(
-                    title: Text("Senior ux desing"),
-                    subtitle: Row(
-                      children: [
-                        Text(
-                          "Channel",
-                          style: TextStyle(color: WhiteColor),
-                        ),
-                        Text(
-                          "-",
-                          style: TextStyle(color: WhiteColor),
-                        ),
-                        Text(
-                          "full time",
-                          style: TextStyle(color: WhiteColor),
-                        ),
-                      ],
-                    ),
-                    leading: ButtomAppBarShawdow(
-                      backgroung: BlackColor,
-                      widget: Icon(
-                        Icons.work,
-                        color: WhiteColor,
-                      ),
-                    ),
-                  ),
+                  JobsListWidgts(),
                 ],
               ),
             ),
