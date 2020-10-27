@@ -3,12 +3,6 @@ import 'package:uix/constants/strings.dart';
 import 'package:uix/models/jobs.dart';
 import 'package:uix/models/jobs_list.dart';
 import 'package:uix/utils/colors.dart';
-import 'package:uix/views/widgets/appBarWidget.dart';
-import 'package:uix/views/widgets/buttom_app_bar_shadow.dart';
-import 'package:uix/views/widgets/card_offres.dart';
-import 'package:uix/views/widgets/background.dart';
-import 'package:uix/views/widgets/jobs_widgets.dart';
-import 'package:uix/views/widgets/searchWidets.dart';
 
 class HomeScree extends StatefulWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uix/utils/colors.dart';
-import 'package:uix/views/widgets/buttom_app_bar_shadow.dart';
+import 'package:uix/ui/widgets/buttom_app_bar_shadow.dart';
 
 class SearchWidget extends StatelessWidget {
   const SearchWidget({
