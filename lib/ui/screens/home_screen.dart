@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:uix/constants/strings.dart';
 import 'package:uix/models/jobs.dart';
-import 'package:uix/models/jobs_list.dart';
+import 'package:uix/ui/widgets/appBarWidget.dart';
+import 'package:uix/ui/widgets/background.dart';
+import 'package:uix/ui/widgets/card_offres.dart';
+import 'package:uix/ui/widgets/jobs_widgets.dart';
+import 'package:uix/ui/widgets/searchWidets.dart';
 import 'package:uix/utils/colors.dart';
 
 class HomeScree extends StatefulWidget {
@@ -10,7 +13,6 @@ class HomeScree extends StatefulWidget {
 }
 
 class _HomeScreeState extends State<HomeScree> {
-  final List<Jobs> jobs = JobsList.getJobs();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -70,28 +72,13 @@ class _HomeScreeState extends State<HomeScree> {
                       ],
                     ),
                   ),
-                  // Flexible(
-                  //   child: Container(
-                  //     child: jobs.length > 0
-                  //         ? ListView.builder(
-                  //             itemCount: jobs.length,
-                  //             itemBuilder: (BuildContext context, i) =>
-                  //                 CardOffres(
-                  //               size: size,
-                  //               jobs: jobs[i],
-                  //             ),
-                  //           )
-                  //         : Container(),
-                  //   ),
-                  // ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     physics: BouncingScrollPhysics(),
                     child: Row(
                       children: [
-                        CardOffres(size: size),
-                        CardOffres(size: size),
-                        CardOffres(size: size),
+                        for (final job in allJobs)
+                          CardOffres(size: size, jobs: job),
                       ],
                     ),
                   ),
