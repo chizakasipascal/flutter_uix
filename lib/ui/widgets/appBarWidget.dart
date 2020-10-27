@@ -43,10 +43,10 @@ class AppbarWidget extends StatelessWidget {
           width: 40,
           child: ButtomAppBarShawdow(
             color: BlueColor,
-            widget: Image.network(
-              Strings.user,
-              fit: BoxFit.cover,
-            ),
+            // widget: Image.network(
+            //   Strings.user,
+            //   fit: BoxFit.cover,
+            // ),
           ),
         ),
       ],

@@ -30,7 +30,7 @@ final TextStyle titleTextStyle = TextStyle(
 );
 
 final TextStyle subTitleTextStyle = TextStyle(
-  fontSize: 38.0,
+  fontSize: 18.0,
   fontWeight: FontWeight.bold,
   color: BlueColor,
 );
