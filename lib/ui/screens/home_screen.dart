@@ -78,7 +78,10 @@ class _HomeScreeState extends State<HomeScree> {
                     child: Row(
                       children: [
                         for (final job in allJobs)
-                          CardOffres(size: size, jobs: job),
+                          CardOffres(
+                            size: size,
+                            jobs: job,
+                          ),
                       ],
                     ),
                   ),

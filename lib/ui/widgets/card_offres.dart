@@ -32,8 +32,8 @@ class CardOffres extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "Senior UIX Designer",
-                    // "${jobs.description}",
+                    // "Senior UIX Designer",
+                    "${jobs.description}",
                     style: TextStyle(
                       fontSize: 20.0,
                       color: WhiteColor,
@@ -49,8 +49,8 @@ class CardOffres extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "40-120 hour",
-                    // "${jobs.description}",
+                    // "40-120 hour",
+                    "${jobs.hour}",
                     style: TextStyle(
                       color: WhiteColor,
                       fontWeight: FontWeight.w800,
@@ -66,8 +66,8 @@ class CardOffres extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "Full",
-                        // "${jobs.description}",
+                        // "Full",
+                        "${jobs.hour}",
                         style: TextStyle(
                           color: WhiteColor,
                           fontWeight: FontWeight.w800,
@@ -98,15 +98,15 @@ class CardOffres extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Channel",
-                        // "${jobs.description}",
+                        // "Channel",
+                        "${jobs.description}",
                         style: TextStyle(
                           color: WhiteColor,
                         ),
                       ),
                       Text(
-                        "San Diego",
-                        // "${jobs.description}",
+                        // "San Diego",
+                        "${jobs.description}",
                         style: TextStyle(
                           color: WhiteColor,
                         ),
@@ -115,8 +115,8 @@ class CardOffres extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    "4 days",
-                    // "${jobs.description}",
+                    // "4 days",
+                    "${jobs.description}",
                     style: TextStyle(
                       color: Colors.red,
                     ),
