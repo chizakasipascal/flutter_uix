@@ -1,9 +1,12 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:uix/constants/strings.dart';
+import 'package:uix/utils/colors.dart';
 
 class Jobs {
   final String description;
   final String subdescritpion;
-  final String logo;
+  final Widget logo;
   final String corporater;
   final String location;
   final String daysleft;
@@ -21,9 +24,12 @@ class Jobs {
 }
 
 final desginJobs = Jobs(
-  description: "Full Stack design",
+  description: "Design",
   subdescritpion: "30- 90",
-  logo: Strings.user,
+  logo: Icon(
+    Icons.graphic_eq,
+    color: WhiteColor,
+  ),
   corporater: "Connectis",
   location: "Goma",
   daysleft: "30 days",
@@ -31,29 +37,38 @@ final desginJobs = Jobs(
   jobsImages: [],
 );
 final programmerJobs = Jobs(
-  description: "Full Stack design",
+  description: "Mobile developper",
   subdescritpion: "30- 90",
-  logo: Strings.user,
-  corporater: "Connectis",
-  location: "Goma",
-  daysleft: "30 days",
+  logo: Icon(
+    Icons.mobile_friendly,
+    color: WhiteColor,
+  ),
+  corporater: "Samusungs",
+  location: "Russie",
+  daysleft: "For life",
   jobs: [0, 2],
   jobsImages: [],
 );
 final graphicJobs = Jobs(
-  description: "Full Stack design",
+  description: "Desktop developper",
   subdescritpion: "30- 90",
-  logo: Strings.user,
-  corporater: "Connectis",
-  location: "Goma",
+  logo: Icon(
+    Icons.desktop_mac,
+    color: WhiteColor,
+  ),
+  corporater: "Keys",
+  location: "Bukavu",
   daysleft: "30 days",
   jobs: [0, 3],
   jobsImages: [],
 );
 final mathJobs = Jobs(
-  description: "Full Stack design",
+  description: "Data base manager",
   subdescritpion: "30- 90",
-  logo: Strings.user,
+  logo: Icon(
+    Icons.data_usage,
+    color: WhiteColor,
+  ),
   corporater: "Connectis",
   location: "Goma",
   daysleft: "30 days",
