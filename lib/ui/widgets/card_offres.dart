@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:uix/models/jobs.dart';
+import 'package:uix/models/offres.dart';
 import 'package:uix/utils/colors.dart';
 
 class CardOffres extends StatelessWidget {
-  final Jobs jobs;
+  final Offres offres;
   const CardOffres({
     Key key,
     @required this.size,
-    this.jobs,
+    this.offres,
   }) : super(key: key);
 
   final Size size;
@@ -31,7 +31,7 @@ class CardOffres extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${jobs.description}",
+                    "${offres.description}",
                     style: TextStyle(
                       fontSize: 20.0,
                       color: WhiteColor,
@@ -42,7 +42,7 @@ class CardOffres extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "${jobs.subdescritpion}",
+                        "${offres.subdescritpion}",
                         style: TextStyle(
                           color: WhiteColor,
                           fontWeight: FontWeight.w800,
@@ -89,13 +89,13 @@ class CardOffres extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "${jobs.corporater}",
+                            "${offres.corporater}",
                             style: TextStyle(
                               color: WhiteColor,
                             ),
                           ),
                           Text(
-                            "${jobs.location}",
+                            "${offres.location}",
                             style: TextStyle(
                               color: WhiteColor,
                             ),
@@ -106,7 +106,7 @@ class CardOffres extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 10),
                         child: Text(
-                          "${jobs.daysleft}",
+                          "${offres.daysleft}",
                           style: TextStyle(
                             color: WhiteColor,
                           ),

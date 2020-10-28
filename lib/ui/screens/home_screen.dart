@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uix/models/jobs.dart';
+import 'package:uix/models/offres.dart';
 import 'package:uix/ui/widgets/appBarWidget.dart';
 import 'package:uix/ui/widgets/background.dart';
 import 'package:uix/ui/widgets/card_offres.dart';
@@ -77,10 +78,10 @@ class _HomeScreeState extends State<HomeScree> {
                     physics: BouncingScrollPhysics(),
                     child: Row(
                       children: [
-                        for (final job in allJobs)
+                        for (final offre in alloffres)
                           CardOffres(
                             size: size,
-                            jobs: job,
+                            offres: offre,
                           ),
                       ],
                     ),
@@ -109,9 +110,10 @@ class _HomeScreeState extends State<HomeScree> {
                       ],
                     ),
                   ),
-                  JobsListWidgts(),
-                  JobsListWidgts(),
-                  JobsListWidgts(),
+                  for (final job in allJobs)
+                    JobsListWidgts(
+                      jobs: job,
+                    ),
                 ],
               ),
             ),
