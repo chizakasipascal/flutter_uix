@@ -32,7 +32,6 @@ class CardOffres extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    // "Senior UIX Designer",
                     "${jobs.description}",
                     style: TextStyle(
                       fontSize: 20.0,
@@ -49,8 +48,7 @@ class CardOffres extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    // "40-120 hour",
-                    "${jobs.hour}",
+                    "${jobs.subdescritpion}",
                     style: TextStyle(
                       color: WhiteColor,
                       fontWeight: FontWeight.w800,
@@ -66,8 +64,7 @@ class CardOffres extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        // "Full",
-                        "${jobs.hour}",
+                        "Full time",
                         style: TextStyle(
                           color: WhiteColor,
                           fontWeight: FontWeight.w800,
@@ -98,15 +95,13 @@ class CardOffres extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        // "Channel",
-                        "${jobs.description}",
+                        "${jobs.corporater}",
                         style: TextStyle(
                           color: WhiteColor,
                         ),
                       ),
                       Text(
-                        // "San Diego",
-                        "${jobs.description}",
+                        "${jobs.location}",
                         style: TextStyle(
                           color: WhiteColor,
                         ),
@@ -115,8 +110,7 @@ class CardOffres extends StatelessWidget {
                   ),
                   Spacer(),
                   Text(
-                    // "4 days",
-                    "${jobs.description}",
+                    "${jobs.daysleft}",
                     style: TextStyle(
                       color: Colors.red,
                     ),

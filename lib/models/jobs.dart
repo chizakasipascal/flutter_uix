@@ -2,67 +2,61 @@ import 'package:uix/constants/strings.dart';
 
 class Jobs {
   final String description;
-  final String montant;
-  final String hour;
+  final String subdescritpion;
   final String logo;
-  final String entreprise;
-  final String ville;
-  final String dureOffret;
+  final String corporater;
+  final String location;
+  final String daysleft;
   final List jobs, jobsImages;
 
   Jobs(
       {this.description,
-      this.montant,
-      this.hour,
+      this.subdescritpion,
       this.logo,
-      this.entreprise,
-      this.ville,
-      this.dureOffret,
+      this.corporater,
+      this.location,
+      this.daysleft,
       this.jobs,
       this.jobsImages});
 }
 
 final desginJobs = Jobs(
   description: "Full Stack design",
-  montant: "30- 90",
-  hour: "Fulltime",
+  subdescritpion: "30- 90",
   logo: Strings.user,
-  entreprise: "Connectis",
-  ville: "Goma",
-  dureOffret: "30 days",
+  corporater: "Connectis",
+  location: "Goma",
+  daysleft: "30 days",
   jobs: [0, 1],
   jobsImages: [],
 );
 final programmerJobs = Jobs(
-  description: "Full Stack developper",
-  montant: "30- 90",
-  hour: "Fulltime",
+  description: "Full Stack design",
+  subdescritpion: "30- 90",
   logo: Strings.user,
-  entreprise: "Connectis",
-  ville: "Goma",
-  dureOffret: "4 days",
+  corporater: "Connectis",
+  location: "Goma",
+  daysleft: "30 days",
   jobs: [0, 2],
   jobsImages: [],
 );
 final graphicJobs = Jobs(
-  description: "Graphic illustration",
-  montant: "180- 270",
-  hour: "Fulltime",
+  description: "Full Stack design",
+  subdescritpion: "30- 90",
   logo: Strings.user,
-  entreprise: "Connectis",
-  ville: "Goma",
-  dureOffret: "4 days",
+  corporater: "Connectis",
+  location: "Goma",
+  daysleft: "30 days",
   jobs: [0, 3],
   jobsImages: [],
 );
 final mathJobs = Jobs(
-  description: "Professor math",
-  montant: "04- 8",
-  hour: "Fulltime",
+  description: "Full Stack design",
+  subdescritpion: "30- 90",
   logo: Strings.user,
-  entreprise: "Connectis",
-  ville: "Goma",
-  dureOffret: "4 days",
+  corporater: "Connectis",
+  location: "Goma",
+  daysleft: "30 days",
   jobs: [0, 4],
   jobsImages: [],
 );
