@@ -1,33 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:uix/models/jobs.dart';
 import 'package:uix/utils/colors.dart';
 import 'package:uix/ui/widgets/buttom_app_bar_shadow.dart';
 
 class JobsListWidgts extends StatelessWidget {
+  final Jobs jobs;
   const JobsListWidgts({
     Key key,
+    this.jobs,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text("Senior ux desing"),
+      title: Text(jobs.description),
       subtitle: Row(
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            "Channel",
-            style: TextStyle(color: WhiteColor),
+            "${jobs.subdescription}",
+            style: TextStyle(color: BlueColor),
           ),
           Text(
             "-",
-            style: TextStyle(color: WhiteColor),
+            style: TextStyle(color: BlueColor),
           ),
           Text(
-            "full time",
-            style: TextStyle(color: WhiteColor),
+            "${jobs.subdescription2}",
+            style: TextStyle(color: BlueColor),
           ),
           Spacer(),
           Text(
-            "17days",
+            "${jobs.daysleft}",
             style: TextStyle(
                 color: BlueColor, fontSize: 10.0, fontWeight: FontWeight.bold),
           ),
