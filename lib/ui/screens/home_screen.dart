@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:uix/app_state.dart';
 import 'package:uix/models/jobs.dart';
@@ -80,14 +83,16 @@ class _HomeScreeState extends State<HomeScree> {
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       physics: BouncingScrollPhysics(),
-                      child: Row(
-                        children: [
-                          for (final offre in alloffres)
-                            CardOffres(
-                              size: size,
-                              offres: offre,
-                            ),
-                        ],
+                      child: Consumer<AppState>(
+                        builder: (BuildContext context, appstate, _) => Row(
+                          children: [
+                            for (final offre in alloffres)
+                              CardOffres(
+                                size: size,
+                                offres: offre,
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 10),
@@ -125,6 +130,32 @@ class _HomeScreeState extends State<HomeScree> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SearchIndices extends StatelessWidget {
+  const SearchIndices({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Icons.search,
+          size: 16,
+          color: BlackColor,
+        ),
+        Text(
+          "Job title ",
+          style: TextStyle(
+            fontSize: 10,
+            color: BlackColor,
+          ),
+        )
+      ],
     );
   }
 }

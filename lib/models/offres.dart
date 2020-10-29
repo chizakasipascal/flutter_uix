@@ -1,78 +1,37 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:uix/constants/strings.dart';
-import 'package:uix/utils/colors.dart';
-
 class Offres {
+  final int offresId;
   final String description;
-  final String subdescritpion;
-  final Widget logo;
-  final String corporater;
-  final String location;
-  final String daysleft;
-  final List jobs, jobsImages;
+  final String message;
+  final String lottie;
 
-  Offres(
-      {this.description,
-      this.subdescritpion,
-      this.logo,
-      this.corporater,
-      this.location,
-      this.daysleft,
-      this.jobs,
-      this.jobsImages});
+  Offres({this.offresId, this.description, this.message, this.lottie});
 }
 
 final desginJobs = Offres(
-  description: "Design",
-  subdescritpion: "30- 90",
-  logo: Icon(
-    Icons.graphic_eq,
-    color: WhiteColor,
-  ),
-  corporater: "Connectis",
-  location: "Goma",
-  daysleft: "30 days",
-  jobs: [0, 1],
-  jobsImages: [],
+  offresId: 1,
+  description: "Get hired\nby the popular\nteamns",
+  message:
+      "Find job according to your\nninterest click on search\nAnd choose category aacording you skills",
+  lottie: "assets/images/offres_one.json",
 );
 final programmerJobs = Offres(
-  description: "Mobile developper",
-  subdescritpion: "30- 90",
-  logo: Icon(
-    Icons.mobile_friendly,
-    color: WhiteColor,
-  ),
-  corporater: "Samusungs",
-  location: "Russie",
-  daysleft: "For life",
-  jobs: [0, 2],
-  jobsImages: [],
+  offresId: 2,
+  description: "Flutter\nis Google’s\nUI toolkit",
+  message:
+      "Flutter is Google’s UI toolkit for building beautiful\nnatively compiled applications for mobile, web, and desktop from a single codebase.",
+  lottie: "assets/images/hacker-detection.json",
 );
 final graphicJobs = Offres(
-  description: "Desktop developper",
-  subdescritpion: "30- 90",
-  logo: Icon(
-    Icons.desktop_mac,
-    color: WhiteColor,
-  ),
-  corporater: "Keys",
-  location: "Bukavu",
-  daysleft: "30 days",
-  jobs: [0, 3],
-  jobsImages: [],
+  offresId: 3,
+  description: "Dribbble",
+  message:
+      "Dribbble is the world’s leading\ncommunity for creatives to share, grow,\nand get hired.",
+  lottie: "assets/images/grapphic.json",
 );
 final mathJobs = Offres(
-  description: "Data base manager",
-  subdescritpion: "30- 90",
-  logo: Icon(
-    Icons.data_usage,
-    color: WhiteColor,
-  ),
-  corporater: "Connectis",
-  location: "Goma",
-  daysleft: "30 days",
-  jobs: [0, 4],
-  jobsImages: [],
+  offresId: 4,
+  description: "Mathmatics",
+  message: "Schools educations",
+  lottie: "assets/images/math.json",
 );
 final alloffres = [desginJobs, programmerJobs, graphicJobs, mathJobs];

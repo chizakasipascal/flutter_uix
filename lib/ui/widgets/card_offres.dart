@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+import 'package:uix/app_state.dart';
 import 'package:uix/models/offres.dart';
 import 'package:uix/utils/colors.dart';
 
@@ -14,124 +17,55 @@ class CardOffres extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appState = Provider.of<AppState>(context);
+    final isSelected = appState.selectOffres == offres.offresId;
     return Padding(
-      padding: const EdgeInsets.only(left: 5),
-      child: Stack(
-        children: [
-          Container(
-            width: size.width * .8,
-            height: 180,
-            decoration: BoxDecoration(
-              color: BlueColor,
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "${offres.description}",
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      color: WhiteColor,
-                      fontWeight: FontWeight.w800,
-                    ),
+      padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Container(
+          width: size.width * .8,
+          height: 180,
+          color: WhiteColorBackgroung,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+            child: Stack(
+              children: [
+                Positioned(
+                  right: 20,
+                  top: -10,
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    child: Lottie.asset("${offres.lottie}", fit: BoxFit.cover),
                   ),
-                  Row(
+                ),
+                Positioned(
+                  top: 40,
+                  left: 20,
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "${offres.subdescritpion}",
-                        style: TextStyle(
-                          color: WhiteColor,
-                          fontWeight: FontWeight.w800,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Container(
-                        height: 30,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: WhiteColor.withOpacity(.4),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Full time",
-                            style: TextStyle(
-                              color: BlackColor,
-                              fontWeight: FontWeight.w800,
-                            ),
-                          ),
-                        ),
+                        "${offres.description}",
+                        style: TextStyle(fontWeight: FontWeight.w900),
                       ),
                     ],
                   ),
-                  Spacer(),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Container(
-                        height: 50,
-                        width: 70,
-                        decoration: BoxDecoration(
-                          color: WhiteColor,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Icon(
-                          Icons.wallet_membership,
-                          color: BlueColor,
-                        ),
-                      ),
-                      SizedBox(width: 5),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "${offres.corporater}",
-                            style: TextStyle(
-                              color: WhiteColor,
-                            ),
-                          ),
-                          Text(
-                            "${offres.location}",
-                            style: TextStyle(
-                              color: WhiteColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 10),
-                        child: Text(
-                          "${offres.daysleft}",
-                          style: TextStyle(
-                            color: WhiteColor,
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            right: 0,
-            child: Container(
-              height: 100,
-              width: 90,
-              decoration: BoxDecoration(
-                color: WhiteColor.withOpacity(.2),
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(100),
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  left: 20,
+                  child: Text(
+                    "${offres.message}",
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              ],
             ),
           ),
-        ],
+        ),
       ),
     );
   }
