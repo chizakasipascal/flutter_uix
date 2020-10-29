@@ -133,7 +133,15 @@ class _HomeScreeState extends State<HomeScree> {
                   child: FloatingActionButton(
                     elevation: 2,
                     backgroundColor: WhiteColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      Drawer(
+                        child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, i) => Container(
+                              height: 20, width: 89, color: Colors.red),
+                        ),
+                      );
+                    },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -165,32 +173,6 @@ class _HomeScreeState extends State<HomeScree> {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SearchIndices extends StatelessWidget {
-  const SearchIndices({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          Icons.search,
-          size: 16,
-          color: BlackColor,
-        ),
-        Text(
-          "Job title ",
-          style: TextStyle(
-            fontSize: 10,
-            color: BlackColor,
-          ),
-        )
-      ],
     );
   }
 }
