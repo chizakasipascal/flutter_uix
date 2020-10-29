@@ -18,7 +18,7 @@ final programmerJobs = Offres(
   offresId: 2,
   description: "Flutter\nis Google’s\nUI toolkit",
   message:
-      "Flutter is Google’s UI toolkit for building beautiful\nnatively compiled applications for mobile, web, and desktop from a single codebase.",
+      "Flutter is Google’s UI toolkit for building\nbeautifulnatively compiled applications\nfor mobile, web, and desktop from a single codebase.",
   lottie: "assets/images/hacker-detection.json",
 );
 final graphicJobs = Offres(

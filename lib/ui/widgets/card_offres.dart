@@ -55,7 +55,6 @@ class CardOffres extends StatelessWidget {
                 ),
                 Positioned(
                   bottom: 0,
-                  left: 20,
                   child: Text(
                     "${offres.message}",
                     overflow: TextOverflow.ellipsis,
