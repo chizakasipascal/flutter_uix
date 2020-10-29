@@ -5,11 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:uix/app_state.dart';
 import 'package:uix/models/jobs.dart';
 import 'package:uix/models/offres.dart';
-import 'package:uix/ui/widgets/appBarWidget.dart';
 import 'package:uix/ui/widgets/background.dart';
 import 'package:uix/ui/widgets/card_offres.dart';
 import 'package:uix/ui/widgets/jobs_widgets.dart';
-import 'package:uix/ui/widgets/searchWidets.dart';
 import 'package:uix/utils/colors.dart';
 
 class HomeScree extends StatefulWidget {
@@ -29,14 +27,12 @@ class _HomeScreeState extends State<HomeScree> {
             children: [
               BuildBackground(),
               SingleChildScrollView(
-                child: Column(
-                  children: [
-                    // AppbarWidget(),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20.0, vertical: 20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
                         children: [
                           SizedBox(height: 20),
                           Text(
@@ -54,117 +50,90 @@ class _HomeScreeState extends State<HomeScree> {
                               fontSize: 30.0,
                             ),
                           ),
-                          SizedBox(height: 10),
-                          SearchWidget(size: size),
-                          SizedBox(height: 10),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Popular Jobs",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: BlackColor,
-                                    fontSize: 18.0),
-                              ),
-                              Text(
-                                "show all",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w900,
-                                  color: BlackColor.withOpacity(.5),
-                                ),
-                              )
-                            ],
-                          ),
                         ],
                       ),
-                    ),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      physics: BouncingScrollPhysics(),
-                      child: Consumer<AppState>(
-                        builder: (BuildContext context, appstate, _) => Row(
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        physics: BouncingScrollPhysics(),
+                        child: Consumer<AppState>(
+                          builder: (BuildContext context, appstate, _) => Row(
+                            children: [
+                              for (final offre in alloffres)
+                                CardOffres(
+                                  size: size,
+                                  offres: offre,
+                                ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            left: 20, right: 20, bottom: 5),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            for (final offre in alloffres)
-                              CardOffres(
-                                size: size,
-                                offres: offre,
+                            Text(
+                              "Recents jobs",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: BlackColor,
+                                  fontSize: 18.0),
+                            ),
+                            Text(
+                              "show all",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w900,
+                                color: BlackColor.withOpacity(.5),
                               ),
+                            )
                           ],
                         ),
                       ),
-                    ),
-                    SizedBox(height: 10),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 20, right: 20, bottom: 5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      for (final job in allJobs)
+                        JobsListWidgts(
+                          jobs: job,
+                        ),
+                    ],
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.topRight,
+                child: SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: FloatingActionButton(
+                      elevation: 2,
+                      backgroundColor: WhiteColor,
+                      onPressed: () {},
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
-                            "Recents jobs",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: BlackColor,
-                                fontSize: 18.0),
+                          Container(
+                            height: 1,
+                            width: 15,
+                            color: BlueColor,
+                            margin: const EdgeInsets.all(1),
                           ),
-                          Text(
-                            "show all",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              color: BlackColor.withOpacity(.5),
-                            ),
+                          Container(
+                            height: 1,
+                            width: 9,
+                            color: BlueColor,
+                            margin: const EdgeInsets.all(1),
+                          ),
+                          Container(
+                            height: 1,
+                            width: 7,
+                            color: BlueColor,
+                            margin: const EdgeInsets.all(1),
                           )
                         ],
                       ),
-                    ),
-                    for (final job in allJobs)
-                      JobsListWidgts(
-                        jobs: job,
-                      ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 60,
-                width: 60,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: FloatingActionButton(
-                    elevation: 2,
-                    backgroundColor: WhiteColor,
-                    onPressed: () {
-                      Drawer(
-                        child: ListView.builder(
-                          itemCount: 3,
-                          itemBuilder: (BuildContext context, i) => Container(
-                              height: 20, width: 89, color: Colors.red),
-                        ),
-                      );
-                    },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          height: 1,
-                          width: 15,
-                          color: BlueColor,
-                          margin: const EdgeInsets.all(1),
-                        ),
-                        Container(
-                          height: 1,
-                          width: 9,
-                          color: BlueColor,
-                          margin: const EdgeInsets.all(1),
-                        ),
-                        Container(
-                          height: 1,
-                          width: 7,
-                          color: BlueColor,
-                          margin: const EdgeInsets.all(1),
-                        )
-                      ],
                     ),
                   ),
                 ),
