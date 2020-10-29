@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:uix/app_state.dart';
 import 'package:uix/models/jobs.dart';
@@ -32,13 +31,13 @@ class _HomeScreeState extends State<HomeScree> {
               SingleChildScrollView(
                 child: Column(
                   children: [
+                    // AppbarWidget(),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20.0, vertical: 20.0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          AppbarWidget(),
                           SizedBox(height: 20),
                           Text(
                             "Goodmoning Pascal",
@@ -126,36 +125,54 @@ class _HomeScreeState extends State<HomeScree> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: 60,
+                width: 60,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: FloatingActionButton(
+                    elevation: 2,
+                    backgroundColor: WhiteColor,
+                    onPressed: () {
+                      Drawer(
+                        child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (BuildContext context, i) => Container(
+                              height: 20, width: 89, color: Colors.red),
+                        ),
+                      );
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          height: 1,
+                          width: 15,
+                          color: BlueColor,
+                          margin: const EdgeInsets.all(1),
+                        ),
+                        Container(
+                          height: 1,
+                          width: 9,
+                          color: BlueColor,
+                          margin: const EdgeInsets.all(1),
+                        ),
+                        Container(
+                          height: 1,
+                          width: 7,
+                          color: BlueColor,
+                          margin: const EdgeInsets.all(1),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-class SearchIndices extends StatelessWidget {
-  const SearchIndices({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          Icons.search,
-          size: 16,
-          color: BlackColor,
-        ),
-        Text(
-          "Job title ",
-          style: TextStyle(
-            fontSize: 10,
-            color: BlackColor,
-          ),
-        )
-      ],
     );
   }
 }
