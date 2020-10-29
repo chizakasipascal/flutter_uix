@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uix/app_state.dart';
 import 'package:uix/models/jobs.dart';
 import 'package:uix/models/offres.dart';
 import 'package:uix/ui/widgets/appBarWidget.dart';
@@ -18,106 +20,109 @@ class _HomeScreeState extends State<HomeScree> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            BuildBackground(),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        AppbarWidget(),
-                        SizedBox(height: 20),
-                        Text(
-                          "Goodmoning Pascal",
-                          style: TextStyle(
-                            color: BlackColor.withOpacity(.5),
-                            fontSize: 18.0,
-                          ),
-                        ),
-                        Text(
-                          "Find your\nCREATE JOBS",
-                          style: TextStyle(
-                            color: BlackColor,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 30.0,
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        SearchWidget(size: size),
-                        SizedBox(height: 10),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Popular Jobs",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: BlackColor,
-                                  fontSize: 18.0),
+      body: ChangeNotifierProvider<AppState>(
+        create: (_) => AppState(),
+        child: SafeArea(
+          child: Stack(
+            children: [
+              BuildBackground(),
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20.0, vertical: 20.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AppbarWidget(),
+                          SizedBox(height: 20),
+                          Text(
+                            "Goodmoning Pascal",
+                            style: TextStyle(
+                              color: BlackColor.withOpacity(.5),
+                              fontSize: 18.0,
                             ),
-                            Text(
-                              "show all",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w900,
-                                color: BlackColor.withOpacity(.5),
-                              ),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    physics: BouncingScrollPhysics(),
-                    child: Row(
-                      children: [
-                        for (final offre in alloffres)
-                          CardOffres(
-                            size: size,
-                            offres: offre,
                           ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 10),
-                  Padding(
-                    padding:
-                        const EdgeInsets.only(left: 20, right: 20, bottom: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Recents jobs",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
+                          Text(
+                            "Find your\nCREATE JOBS",
+                            style: TextStyle(
                               color: BlackColor,
-                              fontSize: 18.0),
-                        ),
-                        Text(
-                          "show all",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w900,
-                            color: BlackColor.withOpacity(.5),
+                              fontWeight: FontWeight.w900,
+                              fontSize: 30.0,
+                            ),
                           ),
-                        )
-                      ],
+                          SizedBox(height: 10),
+                          SearchWidget(size: size),
+                          SizedBox(height: 10),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Popular Jobs",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: BlackColor,
+                                    fontSize: 18.0),
+                              ),
+                              Text(
+                                "show all",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w900,
+                                  color: BlackColor.withOpacity(.5),
+                                ),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  for (final job in allJobs)
-                    JobsListWidgts(
-                      jobs: job,
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      physics: BouncingScrollPhysics(),
+                      child: Row(
+                        children: [
+                          for (final offre in alloffres)
+                            CardOffres(
+                              size: size,
+                              offres: offre,
+                            ),
+                        ],
+                      ),
                     ),
-                ],
+                    SizedBox(height: 10),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 20, right: 20, bottom: 5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "Recents jobs",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: BlackColor,
+                                fontSize: 18.0),
+                          ),
+                          Text(
+                            "show all",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w900,
+                              color: BlackColor.withOpacity(.5),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    for (final job in allJobs)
+                      JobsListWidgts(
+                        jobs: job,
+                      ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
