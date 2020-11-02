@@ -1,4 +1,4 @@
-# uix
+# jobs_app_UIX
 
 A new Flutter project.
 
