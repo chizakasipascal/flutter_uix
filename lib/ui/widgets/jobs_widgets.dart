@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:uix/models/jobs.dart';
 import 'package:uix/utils/colors.dart';
-import 'package:uix/ui/widgets/buttom_app_bar_shadow.dart';
 
 class JobsListWidgts extends StatelessWidget {
   final Jobs jobs;
